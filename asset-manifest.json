@@ -1,19 +1,18 @@
 {
   "files": {
     "main.css": "/car-rental/static/css/main.e6c13ad2.css",
-    "main.js": "/car-rental/static/js/main.5a953259.js",
-    "static/media/volvo.png": "/car-rental/static/media/volvo.2f6485654b166fdef063.png",
-    "static/media/Manrope-SemiBold.ttf": "/car-rental/static/media/Manrope-SemiBold.310f108cc524df0e5ffc.ttf",
-    "static/media/Manrope-Medium.ttf": "/car-rental/static/media/Manrope-Medium.08894ccb04665d1a9d53.ttf",
-    "static/media/Manrope-Regular.ttf": "/car-rental/static/media/Manrope-Regular.a9b9e09fe6b69741f316.ttf",
+    "main.js": "/car-rental/static/js/main.264c6e95.js",
+    "static/media/Manrope-Medium.woff2": "/car-rental/static/media/Manrope-Medium.de79433e37b1e90f1d09.woff2",
+    "static/media/Manrope-Regular.woff2": "/car-rental/static/media/Manrope-Regular.7e4f44e2725c4c314be0.woff2",
+    "static/media/Manrope-SemiBold.woff2": "/car-rental/static/media/Manrope-SemiBold.d050d77ab6d83ee023d5.woff2",
     "index.html": "/car-rental/index.html",
     "static/media/heart.svg": "/car-rental/static/media/heart.ac060e771360fcc26ebb0c86173c8396.svg",
     "static/media/line.svg": "/car-rental/static/media/line.5dbce068a4e015f477e063ada8f4b6d7.svg",
     "main.e6c13ad2.css.map": "/car-rental/static/css/main.e6c13ad2.css.map",
-    "main.5a953259.js.map": "/car-rental/static/js/main.5a953259.js.map"
+    "main.264c6e95.js.map": "/car-rental/static/js/main.264c6e95.js.map"
   },
   "entrypoints": [
     "static/css/main.e6c13ad2.css",
-    "static/js/main.5a953259.js"
+    "static/js/main.264c6e95.js"
   ]
 }
