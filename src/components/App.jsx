@@ -1,16 +1,20 @@
+import CatalogPage from "pages/CatalogPage";
+import FavoritesPage from "pages/FavoritesPage";
+import MainPage from "pages/MainPage";
+import { Route, Routes } from "react-router-dom";
+
 export const App = () => {
   return (
-    <div
-      style={{
-        height: '100vh',
-        display: 'flex',
-        justifyContent: 'center',
-        alignItems: 'center',
-        fontSize: 40,
-        color: '#010101'
-      }}
-    >
-      React 
-    </div>
+   
+      <Routes>
+        
+        <Route path="/" element={<MainPage/>} />
+        <Route path="/catalog" element={<CatalogPage/>} />
+        <Route path="/favorites" element={<FavoritesPage/>} />
+      
+      </Routes>
+      
+      
+    
   );
 };
