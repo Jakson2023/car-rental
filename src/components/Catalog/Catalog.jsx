@@ -8,15 +8,19 @@ import {
   BlockName,
   ButtonFavorite,
   ButtonLearnMore,
+  ButtonSearch,
   CarCard,
   ImgContainer,
   ModelText,
   RentalPriceText,
+  SelBrand,
   Separator,
+  WrapForm,
+  WrapSelect,
 } from './Catalog.styled';
 import favoritIcon from '../images/heart.svg';
-import volvo from '../images/volvo.png';
-import line from '../images/line.svg'
+
+import line from '../images/line.svg';
 
 const Catalog = () => {
   const adverts = useSelector(state => state.adverts.adverts);
@@ -28,13 +32,32 @@ const Catalog = () => {
 
   return (
     <div>
-      <div>
-        <select name="" id=""></select>
-        <select name="" id=""></select>
-        <input type="text" />
-        <input type="text" />
-        <button></button>
-      </div>
+      <WrapForm>
+        <WrapSelect>
+          <SelBrand>
+            <p>Car brand</p>
+            <select name="" id="">
+              <option value="">Enter the text</option>
+            </select>
+          </SelBrand>
+          <li>
+            <p>Price/ 1 hour</p>
+            <select name="" id="">
+              <option value="">To $</option>
+            </select>
+          </li>
+        </WrapSelect>
+        <div>
+          <div>
+        <p>Car mileage / km</p>
+          
+          <input type="text" placeholder="From" />
+        
+        <input type="text" placeholder="To" />
+        </div>
+        </div>
+        <ButtonSearch>Search</ButtonSearch>
+      </WrapForm>
 
       <BlockCars>
         {adverts.length &&
@@ -62,7 +85,7 @@ const Catalog = () => {
                     <img src={favoritIcon} alt="" />
                   </ButtonFavorite>
                   <ImgContainer>
-                    <img src={volvo} alt="" width={274} height={268} />
+                    <img src={img} alt="" width={274} height={268} />
                   </ImgContainer>
 
                   <BlockName>

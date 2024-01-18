@@ -1,7 +1,7 @@
 import { createGlobalStyle } from "styled-components";
-import ManropeMedium from '../fonts/Manrope-Medium.ttf'
-import ManropeRegular from '../fonts/Manrope-Regular.ttf'
-import ManropeSemiBold from '../fonts/Manrope-SemiBold.ttf'
+import ManropeMedium from '../fonts/Manrope-Medium.woff2'
+import ManropeRegular from '../fonts/Manrope-Regular.woff2'
+import ManropeSemiBold from '../fonts/Manrope-SemiBold.woff2'
 
 export const GeneralStyles = createGlobalStyle`
 @font-face {

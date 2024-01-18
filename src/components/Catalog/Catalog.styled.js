@@ -1,4 +1,39 @@
 import styled from 'styled-components';
+
+export const WrapForm = styled.div`
+display: flex;
+margin-top: 150px;
+justify-content: center;
+gap: 18px;
+`
+export const WrapSelect = styled.ul`
+display: flex;
+height: 74px;
+
+`
+export const SelBrand = styled.li`
+width: 224px;
+`
+
+
+
+export const ButtonSearch = styled.button`
+color: #FFF;
+font-family: Manrope;
+font-size: 14px;
+font-style: normal;
+font-weight: 600;
+line-height: 1.43; 
+
+width: 136px;
+height: 48px;
+padding: 14px 44px;
+
+border-radius: 12px;
+background: #3470FF;
+
+`
+
 export const BlockCars = styled.div`
   width: 1184px;
   display: flex;
@@ -8,6 +43,7 @@ export const BlockCars = styled.div`
   margin-right: auto;
   gap: 29px;
   row-gap: 50px;
+  margin-top: 50px;
 `;
 export const CarCard = styled.div`
   width: 274px;
