@@ -1,5 +1,22 @@
 import React from 'react';
-import { Wrapper } from './ModalCard.styled';
+import {
+  BlockAccessoriesBottom,
+  BlockAccessoriesTop,
+  BlockInfo,
+  ButtonClose,
+  ButtonRental,
+  Description,
+  DescriptionA,
+  ImgContainerModal,
+  NameAuto,
+  RentalBlockBottom,
+  RentalBlockTitle,
+  RentalBlockTop,
+ 
+  Wrapper,
+} from './ModalCard.styled';
+import { Separator } from 'components/Catalog/Catalog.styled';
+import line from '../../common/images/line.svg';
 
 const ModalCard = ({ closeModal, carData }) => {
   const {
@@ -25,40 +42,61 @@ const ModalCard = ({ closeModal, carData }) => {
   const validLicense = separatedText[1];
   const depositRequired = separatedText[2];
 
+  const truncatedAddress = address.split(' ').slice(-2).join(' ');
+
   return (
     <Wrapper>
-      <button onClick={closeModal}>close</button>
-      <img src={img} alt="" width={460} height={248} />
-      <h1>
-        {make} {model}, {year}
-      </h1>
-      <ul>
-        <li>{address}</li>
-        <li>id:{id}</li>
-        <li>Year:{year}</li>
-        <li>Type: {type}</li>
-        <li>Fuel Consumption: {fuelConsumption}</li>
-        <li>Engine Size: {engineSize}</li>
-      </ul>
-      <p>{description}</p>
-      <p>Accessories and functionalities:</p>
-      <ul>
-        <li>{accessories[0]}</li>
-        <li>{accessories[1]}</li>
-        <li>{functionalities[0]}</li>
-        <li>{accessories[2]}</li>
-        <li>{functionalities[1]}</li>
-        <li>{functionalities[2]}</li>
-      </ul>
-      <p>Rental Conditions: </p>
-      <ul>
-        <li>{minimumAge}</li>
-        <li>{validLicense}</li>
-        <li>{depositRequired}</li>
-        <li>{mileage}</li>
-        <li>{rentalPrice}</li>
-      </ul>
-      <button>Rental car</button>
+      <ButtonClose onClick={closeModal}></ButtonClose>
+      <div>
+        <ImgContainerModal>
+          <img src={img} alt="" width={460} height={248} />
+        </ImgContainerModal>
+
+        <NameAuto>
+          {make} {model}, {year}
+        </NameAuto>
+        <BlockInfo>
+          <li>{truncatedAddress}</li>
+          <Separator src={line} alt="" />
+          <li>id:{id}</li>
+          <Separator src={line} alt="" />
+          <li>Year:{year}</li>
+          <Separator src={line} alt="" />
+          <li>Type: {type}</li>
+          <li>Fuel Consumption: {fuelConsumption}</li>
+          <Separator src={line} alt="" />
+          <li>Engine Size: {engineSize}</li>
+        </BlockInfo>
+        <Description>{description}</Description>
+        <DescriptionA>Accessories and functionalities:</DescriptionA>
+        <BlockAccessoriesTop>
+          <li>{accessories[0]}</li>
+          <Separator src={line} alt="" />
+          <li>{accessories[1]}</li>
+          <Separator src={line} alt="" />
+          <li>{functionalities[0]}</li>
+        </BlockAccessoriesTop>
+        <BlockAccessoriesBottom>
+          <li>{accessories[2]}</li>
+          <Separator src={line} alt="" />
+          <li>{functionalities[1]}</li>
+          <Separator src={line} alt="" />
+          <li>{functionalities[2]}</li>
+        </BlockAccessoriesBottom>
+        <RentalBlockTitle>Rental Conditions: </RentalBlockTitle>
+        
+        <RentalBlockTop>
+          <li>{minimumAge}</li>
+          <li>{validLicense}</li>
+        </RentalBlockTop>
+        <RentalBlockBottom>
+          <li>{depositRequired}</li>
+          <li>{mileage}</li>
+          <li>{rentalPrice}</li>
+        </RentalBlockBottom>
+        
+        <ButtonRental>Rental car</ButtonRental>
+      </div>
     </Wrapper>
   );
 };

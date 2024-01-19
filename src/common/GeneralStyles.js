@@ -7,17 +7,18 @@ export const GeneralStyles = createGlobalStyle`
 @font-face {
     font-family:'Manrope' ;
     font-weight: 400;
-    src: url(${ManropeMedium});
+    src: url(${ManropeMedium})format('woff2');
+    
 }
 @font-face {
     font-family:'Manrope' ;
     font-weight: 500;
-    src: url(${ManropeRegular});
+    src: url(${ManropeRegular})format('woff2');
 }
 @font-face {
     font-family:'Manrope' ;
     font-weight: 600;
-    src: url(${ManropeSemiBold});
+    src: url(${ManropeSemiBold})format('woff2');
 }
 
 body {
