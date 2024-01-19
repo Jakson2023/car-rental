@@ -1,38 +1,116 @@
 import styled from 'styled-components';
-
+import arrow from '../../common/images/chevron-down.svg';
 export const WrapForm = styled.div`
-display: flex;
-margin-top: 150px;
-justify-content: center;
-gap: 18px;
-`
+  display: flex;
+  margin-top: 150px;
+  justify-content: center;
+  gap: 18px;
+  align-items: flex-end;
+`;
 export const WrapSelect = styled.ul`
-display: flex;
-height: 74px;
+  display: flex;
+  height: 74px;
+  gap: 18px;
+`;
+export const SelBrandWrap = styled.li``;
+export const SelBrand = styled.select`
+  color: #121417;
+  border: transparent;
 
-`
-export const SelBrand = styled.li`
-width: 224px;
-`
+  font-size: 18px;
 
+  font-weight: 500;
+  line-height: 1.11;
+  cursor: pointer;
+  padding: 14px 89px 14px 18px;
+  height: 48px;
+  width: 224px;
+  appearance: none;
+`;
+export const SelectPrice = styled.select`
+  width: 126px;
+  height: 48px;
+  padding: 14px 18px;
+  appearance: none;
+  cursor: pointer;
+  color: #121417;
+  border: transparent;
 
+  font-size: 18px;
+
+  font-weight: 500;
+  line-height: 1.11;
+`;
+
+export const SelectWrap = styled.div`
+  position: relative;
+  &::before {
+    content: '';
+    position: absolute;
+    display: block;
+    right: 18px;
+    background-image: url(${arrow});
+    top: 14px;
+    width: 20px;
+    height: 20px;
+  }
+`;
+
+export const TextInput = styled.p`
+  color: #8a8a89;
+
+  font-size: 14px;
+
+  font-weight: 500;
+  line-height: 1.29;
+  margin-bottom: 8px;
+`;
+export const InputLeft = styled.input`
+  width: 43px;
+  height: 20px;
+  padding: 14px 85px 14px 24px;
+  border: transparent;
+  border-radius: 14px 0px 0px 14px;
+  border-right: 1px solid rgba(138, 138, 137, 0.2);
+  background: #f7f7fb;
+  color: #121417;
+
+  font-size: 18px;
+
+  font-weight: 500;
+  line-height: 1.11;
+`;
+export const InputRight = styled.input`
+  width: 20px;
+  height: 20px;
+  padding: 14px 115px 14px 24px;
+
+  border-radius: 0px 14px 14px 0px;
+  border: transparent;
+  background: #f7f7fb;
+  color: #121417;
+
+  font-size: 18px;
+
+  font-weight: 500;
+  line-height: 1.11;
+`;
 
 export const ButtonSearch = styled.button`
-color: #FFF;
-font-family: Manrope;
-font-size: 14px;
-font-style: normal;
-font-weight: 600;
-line-height: 1.43; 
+  color: #fff;
 
-width: 136px;
-height: 48px;
-padding: 14px 44px;
+  font-size: 14px;
 
-border-radius: 12px;
-background: #3470FF;
+  font-weight: 600;
+  line-height: 1.43;
 
-`
+  width: 136px;
+  height: 48px;
+  padding: 14px 44px;
+
+  border-radius: 12px;
+  background: #3470ff;
+`;
 
 export const BlockCars = styled.div`
   width: 1184px;
@@ -61,26 +139,29 @@ export const ButtonFavorite = styled.button`
   z-index: 2;
 `;
 
-export const FavoriteIcon = styled.img`
-
-
-`
+export const FavoriteIcon = styled.img``;
 
 export const ImgContainer = styled.div`
   width: 274px;
   height: 268px;
   border: 2px solid lightblue;
-  border-radius: 10px;
+  border-radius: 14px;
   margin-bottom: 14px;
   overflow: hidden;
   position: relative;
+  background: linear-gradient(
+      180deg,
+      rgba(18, 20, 23, 0.5) 2.5%,
+      rgba(18, 20, 23, 0) 41.07%
+    ),
+    url(<path-to-image>), lightgray 50% / cover no-repeat;
 `;
 export const BlockName = styled.ul`
   width: 274px;
   height: 24px;
   color: #121417;
   margin-bottom: 8px;
-  font-family: 'Manrope';
+
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -99,7 +180,7 @@ export const BlockInfoTop = styled.ul`
   height: 18px;
   display: flex;
   color: rgba(18, 20, 23, 0.5);
-  font-family: 'Manrope';
+
   font-size: 12px;
   line-height: 1.5;
   margin-bottom: 4px;
@@ -109,25 +190,23 @@ export const BlockInfoBottom = styled.ul`
   height: 18px;
   display: flex;
   color: rgba(18, 20, 23, 0.5);
-  font-family: 'Manrope';
+
   font-size: 12px;
   line-height: 1.5;
   margin-bottom: 28px;
 `;
 
 export const Separator = styled.img`
-margin-left: 6px;
-margin-right: 6px;
-
-`
-
+  margin-left: 6px;
+  margin-right: 6px;
+`;
 
 export const Truncate = styled.li``;
 
 export const BlockInfoText = styled.li``;
 export const ButtonLearnMore = styled.button`
   color: #fff;
-  font-family: 'Manrope';
+
   font-size: 14px;
   font-weight: 600;
   line-height: 1.43;

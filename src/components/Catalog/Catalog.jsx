@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import { fetchCars } from '../../redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -11,50 +11,71 @@ import {
   ButtonSearch,
   CarCard,
   ImgContainer,
+  InputLeft,
+  InputRight,
   ModelText,
   RentalPriceText,
   SelBrand,
+  SelBrandWrap,
+  SelectPrice,
+  SelectWrap,
   Separator,
+  TextInput,
   WrapForm,
   WrapSelect,
 } from './Catalog.styled';
-import favoritIcon from '../images/heart.svg';
+import favoritIcon from '../../common/images/heart.svg';
 
-import line from '../images/line.svg';
+import line from '../../common/images/line.svg';
+import MainModal from 'components/Modal/MainModal';
+import ModalCard from 'components/Modal/ModalCard';
 
 const Catalog = () => {
   const adverts = useSelector(state => state.adverts.adverts);
-  console.log(adverts);
+
+  const [modalActive, setModalActive] = useState(false);
+  const [cardData, setCardData] = useState();
+
   const dispatch = useDispatch();
+
   useEffect(() => {
     dispatch(fetchCars());
   }, [dispatch]);
+
+  const openCard = carData => {
+    setModalActive(true);
+    setCardData(carData);
+  };
 
   return (
     <div>
       <WrapForm>
         <WrapSelect>
-          <SelBrand>
-            <p>Car brand</p>
-            <select name="" id="">
-              <option value="">Enter the text</option>
-            </select>
-          </SelBrand>
+          <SelBrandWrap>
+            <TextInput>Car brand</TextInput>
+            <SelectWrap>
+              <SelBrand id="" name="">
+                <option value="">Enter the text</option>
+              </SelBrand>
+            </SelectWrap>
+          </SelBrandWrap>
           <li>
-            <p>Price/ 1 hour</p>
-            <select name="" id="">
-              <option value="">To $</option>
-            </select>
+            <TextInput>Price/ 1 hour</TextInput>
+            <SelectWrap>
+              <SelectPrice name="" id="">
+                <option value="">To $</option>
+              </SelectPrice>
+            </SelectWrap>
           </li>
         </WrapSelect>
         <div>
           <div>
-        <p>Car mileage / km</p>
-          
-          <input type="text" placeholder="From" />
-        
-        <input type="text" placeholder="To" />
-        </div>
+            <TextInput>Car mileage / km</TextInput>
+
+            <InputLeft type="text" placeholder="From" />
+
+            <InputRight type="text" placeholder="To" />
+          </div>
         </div>
         <ButtonSearch>Search</ButtonSearch>
       </WrapForm>
@@ -66,14 +87,20 @@ const Catalog = () => {
               {
                 id,
                 img,
-                make,
-                model,
                 year,
-                rentalPrice,
-                address,
-                rentalCompany,
                 type,
+                model,
+                mileage,
+                address,
+                engineSize,
+                rentalPrice,
+                accessories,
+                rentalCompany,
                 functionalities,
+                fuelConsumption,
+                rentalConditions,
+                make,
+                description,
               },
               index
             ) => {
@@ -111,13 +138,41 @@ const Catalog = () => {
                     <li></li>
                     {/* <li>{functionalities}</li> */}
                   </BlockInfoBottom>
-                  <ButtonLearnMore>Learn more</ButtonLearnMore>
+                  <ButtonLearnMore
+                    onClick={() =>
+                      openCard({
+                        id,
+                        img,
+                        year,
+                        type,
+                        model,
+                        mileage,
+                        address,
+                        engineSize,
+                        rentalPrice,
+                        accessories,
+                        functionalities,
+                        fuelConsumption,
+                        rentalConditions,
+                        make,
+                        description,
+                      })
+                    }
+                  >
+                    Learn more
+                  </ButtonLearnMore>
                 </CarCard>
               );
             }
           )}
       </BlockCars>
       <button>load more</button>
+      <MainModal active={modalActive} setActive={setModalActive}>
+        <ModalCard
+          closeModal={() => setModalActive(false)}
+          carData={cardData}
+        />
+      </MainModal>
     </div>
   );
 };
