@@ -3,30 +3,30 @@ import { fetchCars } from '../../redux/operations';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   BlockCars,
-  BlockInfoBottom,
   BlockInfoTop,
   BlockName,
   ButtonFavorite,
   ButtonLearnMore,
+  ButtonLoadMOre,
   ButtonSearch,
   CarCard,
+  Img,
   ImgContainer,
   InputLeft,
   InputRight,
   ModelText,
   RentalPriceText,
   SelBrand,
-  SelBrandWrap,
+ 
   SelectPrice,
   SelectWrap,
-  Separator,
+  SeparatorLine,
   TextInput,
   WrapForm,
   WrapSelect,
 } from './Catalog.styled';
 import favoritIcon from '../../common/images/heart.svg';
 
-import line from '../../common/images/line.svg';
 import MainModal from 'components/Modal/MainModal';
 import ModalCard from 'components/Modal/ModalCard';
 
@@ -51,14 +51,14 @@ const Catalog = () => {
     <div>
       <WrapForm>
         <WrapSelect>
-          <SelBrandWrap>
+          <li>
             <TextInput>Car brand</TextInput>
             <SelectWrap>
               <SelBrand id="" name="">
                 <option value="">Enter the text</option>
               </SelBrand>
             </SelectWrap>
-          </SelBrandWrap>
+          </li>
           <li>
             <TextInput>Price/ 1 hour</TextInput>
             <SelectWrap>
@@ -104,7 +104,16 @@ const Catalog = () => {
               },
               index
             ) => {
-              const truncatedAddress = address.split(' ').slice(-2).join(' ');
+              const words = address.split(',');
+              const city = words[words.length - 2];
+              const country = words[words.length - 1];
+
+              const combinedArray = accessories.concat(functionalities);
+              const randomElement = arr => {
+                const randIndex = Math.floor(Math.random() * arr.length);
+                return arr[randIndex];
+              };
+              const randomItem = randomElement(combinedArray);
 
               return (
                 <CarCard key={id}>
@@ -112,7 +121,7 @@ const Catalog = () => {
                     <img src={favoritIcon} alt="" />
                   </ButtonFavorite>
                   <ImgContainer>
-                    <img src={img} alt="" width={274} height={268} />
+                    <Img src={img} alt="" width={274} height={268} />
                   </ImgContainer>
 
                   <BlockName>
@@ -120,24 +129,18 @@ const Catalog = () => {
                       {make} {index < 3 && <ModelText>{model}</ModelText>},{' '}
                       {year}
                     </li>
-
                     <RentalPriceText>{rentalPrice}</RentalPriceText>
                   </BlockName>
+
                   <BlockInfoTop>
-                    <li>{truncatedAddress}</li>
-                    <Separator src={line} alt="" />
-                    <li>{rentalCompany} </li>
-                    <Separator src={line} alt="" />
-                    <li></li>
+                    <SeparatorLine>{city}</SeparatorLine>
+                    <SeparatorLine>{country}</SeparatorLine>
+                    <SeparatorLine>{rentalCompany} </SeparatorLine>
                     <li>{type}</li>
+                    <SeparatorLine>{model}</SeparatorLine>
+                    <SeparatorLine>{id}</SeparatorLine>
+                    <li>{randomItem}</li>
                   </BlockInfoTop>
-                  <BlockInfoBottom>
-                    <li>{model}</li>
-                    <Separator src={line} alt="" />
-                    <li>{id}</li>
-                    <li></li>
-                    {/* <li>{functionalities}</li> */}
-                  </BlockInfoBottom>
                   <ButtonLearnMore
                     onClick={() =>
                       openCard({
@@ -166,7 +169,7 @@ const Catalog = () => {
             }
           )}
       </BlockCars>
-      <button>load more</button>
+      <ButtonLoadMOre>Load more</ButtonLoadMOre>
       <MainModal active={modalActive} setActive={setModalActive}>
         <ModalCard
           closeModal={() => setModalActive(false)}

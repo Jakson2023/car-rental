@@ -1,5 +1,6 @@
 import styled from 'styled-components';
 import arrow from '../../common/images/chevron-down.svg';
+
 export const WrapForm = styled.div`
   display: flex;
   margin-top: 150px;
@@ -12,13 +13,11 @@ export const WrapSelect = styled.ul`
   height: 74px;
   gap: 18px;
 `;
-export const SelBrandWrap = styled.li``;
+
 export const SelBrand = styled.select`
   color: #121417;
   border: transparent;
-
   font-size: 18px;
-
   font-weight: 500;
   line-height: 1.11;
   cursor: pointer;
@@ -27,6 +26,7 @@ export const SelBrand = styled.select`
   width: 224px;
   appearance: none;
 `;
+
 export const SelectPrice = styled.select`
   width: 126px;
   height: 48px;
@@ -35,9 +35,7 @@ export const SelectPrice = styled.select`
   cursor: pointer;
   color: #121417;
   border: transparent;
-
   font-size: 18px;
-
   font-weight: 500;
   line-height: 1.11;
 `;
@@ -58,9 +56,7 @@ export const SelectWrap = styled.div`
 
 export const TextInput = styled.p`
   color: #8a8a89;
-
   font-size: 14px;
-
   font-weight: 500;
   line-height: 1.29;
   margin-bottom: 8px;
@@ -74,9 +70,7 @@ export const InputLeft = styled.input`
   border-right: 1px solid rgba(138, 138, 137, 0.2);
   background: #f7f7fb;
   color: #121417;
-
   font-size: 18px;
-
   font-weight: 500;
   line-height: 1.11;
 `;
@@ -84,32 +78,26 @@ export const InputRight = styled.input`
   width: 20px;
   height: 20px;
   padding: 14px 115px 14px 24px;
-
   border-radius: 0px 14px 14px 0px;
   border: transparent;
   background: #f7f7fb;
   color: #121417;
-
   font-size: 18px;
-
   font-weight: 500;
   line-height: 1.11;
 `;
 
 export const ButtonSearch = styled.button`
   color: #fff;
-
   font-size: 14px;
-
   font-weight: 600;
   line-height: 1.43;
-
   width: 136px;
   height: 48px;
   padding: 14px 44px;
-
   border-radius: 12px;
   background: #3470ff;
+  cursor: pointer;
 `;
 
 export const BlockCars = styled.div`
@@ -137,12 +125,12 @@ export const ButtonFavorite = styled.button`
   right: 14px;
   top: 14px;
   z-index: 2;
+  cursor: pointer;
 `;
 
-export const FavoriteIcon = styled.img``;
 
 export const ImgContainer = styled.div`
-  width: 274px;
+  width: 100%;
   height: 268px;
   border: 2px solid lightblue;
   border-radius: 14px;
@@ -156,12 +144,19 @@ export const ImgContainer = styled.div`
     ),
     url(<path-to-image>), lightgray 50% / cover no-repeat;
 `;
+
+export const Img = styled.img`
+height: 100%;
+    width: 100%;
+    object-fit: cover;
+
+`
+
 export const BlockName = styled.ul`
   width: 274px;
   height: 24px;
   color: #121417;
   margin-bottom: 8px;
-
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -177,36 +172,19 @@ export const RentalPriceText = styled.li`
 `;
 export const BlockInfoTop = styled.ul`
   width: 274px;
-  height: 18px;
+  height: 40px;
   display: flex;
   color: rgba(18, 20, 23, 0.5);
-
-  font-size: 12px;
-  line-height: 1.5;
-  margin-bottom: 4px;
-`;
-export const BlockInfoBottom = styled.ul`
-  width: 274px;
-  height: 18px;
-  display: flex;
-  color: rgba(18, 20, 23, 0.5);
-
   font-size: 12px;
   line-height: 1.5;
   margin-bottom: 28px;
+  overflow: hidden;
+  white-space: nowrap;
+  flex-wrap: wrap;
 `;
 
-export const Separator = styled.img`
-  margin-left: 6px;
-  margin-right: 6px;
-`;
-
-export const Truncate = styled.li``;
-
-export const BlockInfoText = styled.li``;
 export const ButtonLearnMore = styled.button`
   color: #fff;
-
   font-size: 14px;
   font-weight: 600;
   line-height: 1.43;
@@ -215,4 +193,25 @@ export const ButtonLearnMore = styled.button`
   padding: 12px 99px;
   border-radius: 12px;
   background: #3470ff;
+  cursor: pointer;
 `;
+
+export const SeparatorLine = styled.li`
+border-right: 1px solid rgba(18, 20, 23, 0.10);
+    margin-right: 6px;
+    padding-right: 6px;
+
+`
+
+export const ButtonLoadMOre = styled.button`
+color: #3470FF;
+font-size: 16px;
+font-weight: 500;
+line-height: 1.5; 
+text-decoration-line: underline;
+margin: 0 auto;
+margin-top: 100px;
+display: block;
+cursor: pointer;
+
+`

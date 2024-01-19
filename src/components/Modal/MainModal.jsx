@@ -1,6 +1,6 @@
 import ReactDOM from "react-dom";
 import React, { useEffect } from "react";
-import { Content, Modal } from "./MainModal.styled";
+import {  Modal } from "./MainModal.styled";
 
 
 const MainModal = ({ active, setActive, children,id}) => {
@@ -32,7 +32,7 @@ const MainModal = ({ active, setActive, children,id}) => {
       
       onClick={() => setActive(false)}
     >
-      <Content onClick={(e) => e.stopPropagation()}>{children}</Content>
+      <div onClick={(e) => e.stopPropagation()}>{children}</div>
     </Modal>,
 
     document.getElementById("modal")

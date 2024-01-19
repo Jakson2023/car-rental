@@ -9,7 +9,7 @@ export const Modal = styled.div`
   height: 100vh;
   align-items: center;
   justify-content: center;
- background-color: rgba(0, 0, 0, 0.7);
+ background-color: rgba(18, 20, 23, 0.50);;
   transform: scale(0);
   display: flex;
   overflow: auto;
@@ -20,7 +20,4 @@ export const Modal = styled.div`
     justify-content: center; 
     
   }
-`;
-export const Content = styled.div`
- 
 `;
