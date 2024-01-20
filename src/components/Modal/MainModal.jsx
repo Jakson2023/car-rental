@@ -1,9 +1,10 @@
 import ReactDOM from "react-dom";
 import React, { useEffect } from "react";
 import {  Modal } from "./MainModal.styled";
+import { modalScrollOff } from "components/Utils/utils";
 
 
-const MainModal = ({ active, setActive, children,id}) => {
+const MainModal = ({ active, setActive, children}) => {
   
   useEffect(() => {
     const closeModal = (e) => {
@@ -14,15 +15,15 @@ const MainModal = ({ active, setActive, children,id}) => {
 
     if (active) {
       document.addEventListener("keydown", closeModal);
-    //   modalScrollOff(true);
+      modalScrollOff(true);
     } else {
       document.removeEventListener("keydown", closeModal);
-    //   modalScrollOff(false);
+      modalScrollOff(false);
     }
 
     return () => {
       document.removeEventListener("keydown", closeModal);
-    //   modalScrollOff(false);
+      modalScrollOff(false);
     };
   }, [active, setActive]);
 

@@ -18,6 +18,11 @@ export const NameAuto = styled.h1`
   font-weight: 500;
   line-height: 1.33;
 `;
+export const SeparatorLine = styled.li`
+  border-right: 1px solid rgba(18, 20, 23, 0.1);
+  margin-right: 6px;
+  padding-right: 6px;
+`;
 export const BlockInfo = styled.ul`
   height: 18px;
   color: rgba(18, 20, 23, 0.5);

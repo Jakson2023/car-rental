@@ -16,8 +16,9 @@ import {
   RentalBlockTitle,
   RentalBlockTop,
   Wrapper,
+  SeparatorLine
 } from './ModalCard.styled';
-import { SeparatorLine } from 'components/Catalog/Catalog.styled';
+
 
 const ModalCard = ({ closeModal, carData }) => {
   const {
