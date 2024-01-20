@@ -18,8 +18,6 @@ import SingleCard from 'components/CarCard/CarCard';
 const Favorites = () => {
   const favorites = useSelector(state => state.adverts.favorites);
 
-  console.log(favorites);
-
   const [selectedMake, setSelectedMake] = useState('');
 
   const filteredCars =

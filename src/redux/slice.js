@@ -8,17 +8,20 @@ const slice = createSlice({
     adverts: [],
     error: null,
     page: 1,
-    alladverts:[]
+    alladverts: [],
   },
   reducers: {
-    nextPage: (state) => {
+    nextPage: state => {
       state.page += 1;
     },
     addToFavorites: (state, action) => {
       state.favorites = [...state.favorites, action.payload];
     },
-
-
+    removeFromFavorites: (state, action) => {
+      state.favorites = state.favorites.filter(
+        item => item.id !== action.payload.id
+      );
+    },
   },
 
   extraReducers: builder => {
@@ -38,11 +41,8 @@ const slice = createSlice({
       })
       .addCase(fetchAllCars.rejected, (state, action) => {
         state.error = action.payload;
-      })
-
-      
-      ;
+      });
   },
 });
-export const { nextPage, addToFavorites } = slice.actions;
+export const { nextPage, addToFavorites, removeFromFavorites } = slice.actions;
 export default slice.reducer;

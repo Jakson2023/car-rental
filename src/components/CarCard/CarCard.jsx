@@ -13,11 +13,13 @@ import {
 } from './CarCard.styled';
 import MainModal from 'components/Modal/MainModal';
 import ModalCard from 'components/Modal/ModalCard';
-import favoritIcon from '../../common/images/heart.svg';
-import { useDispatch } from 'react-redux';
-import {addToFavorites} from '../../redux/slice'
+import favoritIcon from '../../common/images/heartblue.svg';
+import notFavoritIcon from '../../common/images/heart.svg';
+import { useDispatch, useSelector } from 'react-redux';
+import { addToFavorites, removeFromFavorites } from '../../redux/slice';
 
-const SingleCard = ({ item,style }) => {
+const SingleCard = ({ item, style }) => {
+  const favorites = useSelector(state => state.adverts.favorites);
   const [modalActive, setModalActive] = useState(false);
   const dispatch = useDispatch();
   const {
@@ -38,7 +40,7 @@ const SingleCard = ({ item,style }) => {
   const city = words[words.length - 2];
   const country = words[words.length - 1];
 
-//*-----random accessories & functionalities----*//
+  //*-----random accessories & functionalities----*//
 
   const combinedArray = accessories.concat(functionalities);
   const randomElement = arr => {
@@ -46,32 +48,47 @@ const SingleCard = ({ item,style }) => {
     return arr[randIndex];
   };
   const randomItem = randomElement(combinedArray);
-  
-//*-----random accessories & functionalities----*//
+
+  //*-----random accessories & functionalities----*//
 
   const openCard = () => {
     setModalActive(true);
   };
 
-const addFavorites =(e)=> {
-    dispatch(addToFavorites(e))
-  }
+  const addRemoveFavorites = e => {
+    const { id } = e;
+    const checkId = favorites.map(item => item.id);
+    if (!checkId.includes(id)) {
+      dispatch(addToFavorites(e));
+    } else {
+      dispatch(removeFromFavorites(e));
+    }
+  };
 
-
-
+  const checkFavorit = item => {
+    const { id } = item;
+    const checkId = favorites.map(item => item.id);
+    if (checkId.includes(id)) {
+      return true;
+    }
+  };
 
   return (
     <div>
       <CarCard>
-        <ButtonFavorite onClick={()=>addFavorites(item)}>
-          <img src={favoritIcon} alt="" />
+        <ButtonFavorite onClick={() => addRemoveFavorites(item)}>
+          {checkFavorit(item) ? (
+            <img src={favoritIcon} alt="Active Favorite" />
+          ) : (
+            <img src={notFavoritIcon} alt="Inactive Favorite" />
+          )}
         </ButtonFavorite>
         <ImgContainer>
           <Img src={img} alt="not found" width={274} height={268} />
         </ImgContainer>
 
         <BlockName>
-          <li >
+          <li>
             {make} <ModelText style={style}>{model}</ModelText>, {year}
           </li>
           <RentalPriceText>{rentalPrice}</RentalPriceText>
@@ -90,7 +107,6 @@ const addFavorites =(e)=> {
         <ButtonLearnMore onClick={() => openCard(id)}>
           Learn more
         </ButtonLearnMore>
-
       </CarCard>
       <MainModal active={modalActive} setActive={setModalActive}>
         <ModalCard closeModal={() => setModalActive(false)} carData={item} />
