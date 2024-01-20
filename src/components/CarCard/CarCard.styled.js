@@ -61,8 +61,7 @@ export const ImgContainer = styled.div`
       180deg,
       rgba(18, 20, 23, 0.5) 2.5%,
       rgba(18, 20, 23, 0) 41.07%
-    ),
-    url(<path-to-image>), lightgray 50% / cover no-repeat;
+    ), lightgray 50% / cover no-repeat;
 `;
 export const ModelText = styled.span`
   color: #3470ff;
