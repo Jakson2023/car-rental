@@ -17,6 +17,7 @@ import {
 } from './Catalog.styled';
 import makes from '../Utils/makes.json'
 import SingleCard from 'components/CarCard/CarCard';
+import { filterCars } from 'components/Utils/utils';
 
 const Catalog = () => {
 
@@ -26,14 +27,7 @@ const Catalog = () => {
   const [selectedMake, setSelectedMake] = useState('');
   const dispatch = useDispatch();
 
-  let filteredCars;
-  if (selectedMake === "") {
-    filteredCars = adverts && adverts.length ? adverts : [];
-} else {
-  filteredCars = alladverts && alladverts.length
-    ? alladverts.filter(car => car.make === selectedMake)
-    : [];
-}
+  const filteredCars = filterCars(selectedMake, adverts, alladverts);
 
   useEffect(() => {
     dispatch(fetchCars());

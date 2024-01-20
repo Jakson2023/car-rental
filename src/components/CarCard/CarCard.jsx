@@ -14,10 +14,12 @@ import {
 import MainModal from 'components/Modal/MainModal';
 import ModalCard from 'components/Modal/ModalCard';
 import favoritIcon from '../../common/images/heart.svg';
+import { useDispatch } from 'react-redux';
+import {addToFavorites} from '../../redux/slice'
 
 const SingleCard = ({ item,style }) => {
   const [modalActive, setModalActive] = useState(false);
-
+  const dispatch = useDispatch();
   const {
     id,
     img,
@@ -51,10 +53,17 @@ const SingleCard = ({ item,style }) => {
     setModalActive(true);
   };
 
+const addFavorites =(e)=> {
+    dispatch(addToFavorites(e))
+  }
+
+
+
+
   return (
     <div>
       <CarCard>
-        <ButtonFavorite>
+        <ButtonFavorite onClick={()=>addFavorites(item)}>
           <img src={favoritIcon} alt="" />
         </ButtonFavorite>
         <ImgContainer>

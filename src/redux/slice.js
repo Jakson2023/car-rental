@@ -4,7 +4,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const slice = createSlice({
   name: 'adverts',
   initialState: {
-    favorits: false,
+    favorites: [],
     adverts: [],
     error: null,
     page: 1,
@@ -14,6 +14,11 @@ const slice = createSlice({
     nextPage: (state) => {
       state.page += 1;
     },
+    addToFavorites: (state, action) => {
+      state.favorites = [...state.favorites, action.payload];
+    },
+
+
   },
 
   extraReducers: builder => {
@@ -39,5 +44,5 @@ const slice = createSlice({
       ;
   },
 });
-export const { nextPage } = slice.actions;
+export const { nextPage, addToFavorites } = slice.actions;
 export default slice.reducer;
