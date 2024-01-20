@@ -68,8 +68,11 @@ const Catalog = () => {
 
       <BlockCars>
         {adverts.length &&
-          adverts.map(item => {
-            return <SingleCard item={item} key={item.id} />;
+          adverts.map((item, index) => {
+            return <SingleCard item={item} key={item.id} style={{
+              color: index < 3 ? '#3470ff' : '',
+              
+            }}/>;
           })}
       </BlockCars>
       

@@ -15,7 +15,7 @@ import MainModal from 'components/Modal/MainModal';
 import ModalCard from 'components/Modal/ModalCard';
 import favoritIcon from '../../common/images/heart.svg';
 
-const SingleCard = ({ item }) => {
+const SingleCard = ({ item,style }) => {
   const [modalActive, setModalActive] = useState(false);
 
   const {
@@ -58,12 +58,12 @@ const SingleCard = ({ item }) => {
           <img src={favoritIcon} alt="" />
         </ButtonFavorite>
         <ImgContainer>
-          <Img src={img} alt="" width={274} height={268} />
+          <Img src={img} alt="not found" width={274} height={268} />
         </ImgContainer>
 
         <BlockName>
-          <li>
-            {make} <ModelText>{model}</ModelText>, {year}
+          <li >
+            {make} <ModelText style={style}>{model}</ModelText>, {year}
           </li>
           <RentalPriceText>{rentalPrice}</RentalPriceText>
         </BlockName>

@@ -64,7 +64,7 @@ export const ImgContainer = styled.div`
     ), lightgray 50% / cover no-repeat;
 `;
 export const ModelText = styled.span`
-  color: #3470ff;
+  /* color: #3470ff; */
 `;
 export const RentalPriceText = styled.li`
   margin-left: auto;
