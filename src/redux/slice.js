@@ -7,8 +7,13 @@ const slice = createSlice({
     favorits: [],
     adverts: {},
     error: null,
+    page: 1
   },
-  reducers: {},
+  reducers: {
+    nextPage: (state) => {
+      state.page += 1;
+    },
+  },
 
   extraReducers: builder => {
     builder
@@ -19,8 +24,10 @@ const slice = createSlice({
       })
       .addCase(fetchCars.rejected, (state, action) => {
         state.error = action.payload;
-      });
+      })
+      
+      ;
   },
 });
-
+export const { nextPage } = slice.actions;
 export default slice.reducer;

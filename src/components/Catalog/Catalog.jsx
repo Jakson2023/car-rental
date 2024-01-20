@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import { fetchCars } from '../../redux/operations';
+import {nextPage} from '../../redux/slice'
 import { useDispatch, useSelector } from 'react-redux';
 import {
   BlockCars,
@@ -25,6 +26,12 @@ const Catalog = () => {
   useEffect(() => {
     dispatch(fetchCars());
   }, [dispatch]);
+
+  const loadMoreClick = ()=>{
+
+    dispatch(nextPage())
+    dispatch(fetchCars())
+  }
 
   return (
     <div>
@@ -66,7 +73,7 @@ const Catalog = () => {
           })}
       </BlockCars>
       
-      <ButtonLoadMOre>Load more</ButtonLoadMOre>
+      <ButtonLoadMOre onClick={loadMoreClick}>Load more</ButtonLoadMOre>
     </div>
   );
 };

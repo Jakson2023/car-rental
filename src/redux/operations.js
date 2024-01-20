@@ -10,8 +10,12 @@ axios.defaults.baseURL = url.toString();
 export const fetchCars = createAsyncThunk(
   'advert/fetchAll',
   async (_, thunkAPI) => {
+    
+    
     try {
-      const response = await axios.get(``);
+      const { page } = thunkAPI.getState().adverts; 
+      url.searchParams.set('page', page);
+      const response = await axios.get(url.toString());
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
