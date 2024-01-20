@@ -1,5 +1,5 @@
-import React, { useEffect } from 'react';
-import { fetchCars } from '../../redux/operations';
+import React, { useEffect, useState } from 'react';
+import { fetchAllCars, fetchCars } from '../../redux/operations';
 import {nextPage} from '../../redux/slice'
 import { useDispatch, useSelector } from 'react-redux';
 import {
@@ -15,23 +15,40 @@ import {
   WrapForm,
   WrapSelect,
 } from './Catalog.styled';
-
+import makes from '../Utils/makes.json'
 import SingleCard from 'components/CarCard/CarCard';
 
 const Catalog = () => {
-  const adverts = useSelector(state => state.adverts.adverts);
 
+  const adverts = useSelector(state => state.adverts.adverts);
+  const alladverts = useSelector(state => state.adverts.alladverts);
+  
+  const [selectedMake, setSelectedMake] = useState('');
   const dispatch = useDispatch();
+
+  let filteredCars;
+  if (selectedMake === "") {
+    filteredCars = adverts && adverts.length ? adverts : [];
+} else {
+  filteredCars = alladverts && alladverts.length
+    ? alladverts.filter(car => car.make === selectedMake)
+    : [];
+}
 
   useEffect(() => {
     dispatch(fetchCars());
   }, [dispatch]);
 
-  const loadMoreClick = ()=>{
+const handleFilter = (e) => {
+  setSelectedMake(e)
+  dispatch(fetchAllCars())
+}
 
+  const loadMoreClick = ()=>{
     dispatch(nextPage())
     dispatch(fetchCars())
   }
+
 
   return (
     <div>
@@ -40,8 +57,15 @@ const Catalog = () => {
           <li>
             <TextInput>Car brand</TextInput>
             <SelectWrap>
-              <SelBrand id="" name="">
-                <option value="">Enter the text</option>
+              <SelBrand id="make" name="make"
+              value={selectedMake}
+              onChange={e => handleFilter(e.target.value)}>
+              <option value="">All makes</option>
+              {makes.map((make, index) => (
+                <option key={index} value={make}>
+                  {make}
+                </option>
+              ))}
               </SelBrand>
             </SelectWrap>
           </li>
@@ -68,7 +92,7 @@ const Catalog = () => {
 
       <BlockCars>
         {adverts.length &&
-          adverts.map((item, index) => {
+          filteredCars.map((item, index) => {
             return <SingleCard item={item} key={item.id} style={{
               color: index < 3 ? '#3470ff' : '',
               
@@ -76,7 +100,7 @@ const Catalog = () => {
           })}
       </BlockCars>
       
-      <ButtonLoadMOre onClick={loadMoreClick}>Load more</ButtonLoadMOre>
+      {adverts.length !== 0 && <ButtonLoadMOre onClick={loadMoreClick}>Load more</ButtonLoadMOre>}
     </div>
   );
 };

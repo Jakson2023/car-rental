@@ -1,13 +1,14 @@
-import { fetchCars } from './operations.js';
+import { fetchAllCars, fetchCars } from './operations.js';
 import { createSlice } from '@reduxjs/toolkit';
 
 const slice = createSlice({
   name: 'adverts',
   initialState: {
-    favorits: [],
-    adverts: {},
+    favorits: false,
+    adverts: [],
     error: null,
-    page: 1
+    page: 1,
+    alladverts:[]
   },
   reducers: {
     nextPage: (state) => {
@@ -25,6 +26,15 @@ const slice = createSlice({
       .addCase(fetchCars.rejected, (state, action) => {
         state.error = action.payload;
       })
+
+      .addCase(fetchAllCars.fulfilled, (state, action) => {
+        state.error = null;
+        state.alladverts = action.payload;
+      })
+      .addCase(fetchAllCars.rejected, (state, action) => {
+        state.error = action.payload;
+      })
+
       
       ;
   },
