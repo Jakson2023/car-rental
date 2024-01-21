@@ -9,7 +9,9 @@ import {
   SelectPrice,
   SelectWrap,
   TextInput,
+  TextInputMileage,
   WrapForm,
+  WrapInput,
   WrapSelect,
 } from '../Catalog/Catalog.styled';
 import makes from '../Utils/makes.json';
@@ -60,15 +62,14 @@ const Favorites = () => {
             </SelectWrap>
           </li>
         </WrapSelect>
-        <div>
+        <WrapInput>
+        <TextInputMileage>Car mileage / km</TextInputMileage>
           <div>
-            <TextInput>Car mileage / km</TextInput>
-
+            
             <InputLeft type="text" placeholder="From" />
-
             <InputRight type="text" placeholder="To" />
           </div>
-        </div>
+        </WrapInput>
         <ButtonSearch>Search</ButtonSearch>
       </WrapForm>
 

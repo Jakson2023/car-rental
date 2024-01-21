@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchAllCars, fetchCars } from '../../redux/operations';
-import {nextPage} from '../../redux/slice'
+import { nextPage } from '../../redux/slice';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   BlockCars,
@@ -12,18 +12,19 @@ import {
   SelectPrice,
   SelectWrap,
   TextInput,
+  TextInputMileage,
   WrapForm,
+  WrapInput,
   WrapSelect,
 } from './Catalog.styled';
-import makes from '../Utils/makes.json'
+import makes from '../Utils/makes.json';
 import SingleCard from 'components/CarCard/CarCard';
 import { filterCars } from 'components/Utils/utils';
 
 const Catalog = () => {
-
   const adverts = useSelector(state => state.adverts.adverts);
   const alladverts = useSelector(state => state.adverts.alladverts);
-  
+
   const [selectedMake, setSelectedMake] = useState('');
   const dispatch = useDispatch();
 
@@ -33,33 +34,35 @@ const Catalog = () => {
     dispatch(fetchCars());
   }, [dispatch]);
 
-const handleFilter = (e) => {
-  setSelectedMake(e)
-  dispatch(fetchAllCars())
-}
+  const handleFilter = e => {
+    setSelectedMake(e);
+    dispatch(fetchAllCars());
+  };
 
-  const loadMoreClick = ()=>{
-    dispatch(nextPage())
-    dispatch(fetchCars())
-  }
-
+  const loadMoreClick = () => {
+    dispatch(nextPage());
+    dispatch(fetchCars());
+  };
 
   return (
     <div>
       <WrapForm>
         <WrapSelect>
           <li>
-            <TextInput>Car brand</TextInput>
+            <TextInput htmlFor="make">Car brand</TextInput>
             <SelectWrap>
-              <SelBrand id="make" name="make"
-              value={selectedMake}
-              onChange={e => handleFilter(e.target.value)}>
-              <option value="">All makes</option>
-              {makes.map((make, index) => (
-                <option key={index} value={make}>
-                  {make}
-                </option>
-              ))}
+              <SelBrand
+                id="make"
+                name="make"
+                value={selectedMake}
+                onChange={e => handleFilter(e.target.value)}
+              >
+                <option value="">All makes</option>
+                {makes.map((make, index) => (
+                  <option key={index} value={make}>
+                    {make}
+                  </option>
+                ))}
               </SelBrand>
             </SelectWrap>
           </li>
@@ -72,29 +75,34 @@ const handleFilter = (e) => {
             </SelectWrap>
           </li>
         </WrapSelect>
-        <div>
+        <WrapInput>
+          <TextInputMileage htmlFor='from'>Car mileage / km</TextInputMileage>
           <div>
-            <TextInput>Car mileage / km</TextInput>
-
-            <InputLeft type="text" placeholder="From" />
-
+            <InputLeft id='from' type="text" placeholder="From" />
             <InputRight type="text" placeholder="To" />
           </div>
-        </div>
+        </WrapInput>
         <ButtonSearch>Search</ButtonSearch>
       </WrapForm>
 
       <BlockCars>
         {adverts.length &&
           filteredCars.map((item, index) => {
-            return <SingleCard item={item} key={item.id} style={{
-              color: index < 3 ? '#3470ff' : '',
-              
-            }}/>;
+            return (
+              <SingleCard
+                item={item}
+                key={item.id}
+                style={{
+                  color: index < 3 ? '#3470ff' : '',
+                }}
+              />
+            );
           })}
       </BlockCars>
-      
-      {adverts.length !== 0 && <ButtonLoadMOre onClick={loadMoreClick}>Load more</ButtonLoadMOre>}
+
+      {adverts.length !== 0 && (
+        <ButtonLoadMOre onClick={loadMoreClick}>Load more</ButtonLoadMOre>
+      )}
     </div>
   );
 };

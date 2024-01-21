@@ -6,7 +6,8 @@ export const WrapForm = styled.div`
   margin-top: 150px;
   justify-content: center;
   gap: 18px;
-  align-items: flex-end;
+  align-items: center;
+
 `;
 export const WrapSelect = styled.ul`
   display: flex;
@@ -54,13 +55,29 @@ export const SelectWrap = styled.div`
   }
 `;
 
-export const TextInput = styled.p`
+export const TextInput = styled.label`
   color: #8a8a89;
   font-size: 14px;
   font-weight: 500;
   line-height: 1.29;
   margin-bottom: 8px;
 `;
+
+export const TextInputMileage = styled.label`
+  color: #8a8a89;
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.29;
+ 
+`;
+
+export const WrapInput = styled.div`
+display: flex;
+    flex-direction: column;
+    height: 74px;
+
+`
+
 export const InputLeft = styled.input`
   width: 43px;
   height: 20px;
