@@ -1,70 +1,35 @@
-# Getting Started with Create React App
+# Super Car Rental
+Це веб-додаток з оренди автомобілів, який дозволяє користувачам легко вибирати, переглядати, додавати автомобілі до обраного та робити замовлення зворотного дзвінка.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+[Огляд]
+Додаток розроблено з використанням таких технологій, як React, Redux і JavaScript.
 
-## Available Scripts
+[Функціонал]
+Вибір авто
+Користувач може переглядати доступні автомобілі та вибирати їх за маркою.
 
-In the project directory, you can run:
+Перегляд функціоналу авто
+Для кожного автомобіля користувач може переглядати докладну інформацію, таку як технічні характеристики, зображення та опис.
 
-### `npm start`
+Додавання до улюблених
+Користувач може додавати автомобілі до списку улюблених для подальшого зручного перегляду.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+Додаток надає можливість користувачам зробити дзвінок для отримання додаткової інформації або консультації.
 
-### `npm test`
+[Використання]
+1.Клонуйте репозиторій на свій локальний комп'ютер.
+2.Встановіть залежності за допомогою команди npm install.
+3.Запустіть додаток командою npm start.
+4.Відкрийте браузер та перейдіть за адресою http://localhost:3000 для перегляду додатка.
+Додаткова інформація
+Для оптимізації роботи додатка та збереження стану використовується бібліотека Redux. Весь стан додатка зберігається централізовано для забезпечення ефективного управління даними та станом додатка.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+[Jakson2023]
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Приємного користування додатком!
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## Важливо! Виявлений баг! Використання "redux-persist" заблокувало можливість повернутися на першу сторінку.
+Дії: очистити Local Storage і натиснути оновлення сторінки на браузері (F5)
