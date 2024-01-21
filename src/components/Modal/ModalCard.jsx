@@ -16,9 +16,8 @@ import {
   RentalBlockTitle,
   RentalBlockTop,
   Wrapper,
-  SeparatorLine
+  SeparatorLine,
 } from './ModalCard.styled';
-
 
 const ModalCard = ({ closeModal, carData }) => {
   const {
@@ -49,6 +48,7 @@ const ModalCard = ({ closeModal, carData }) => {
   const words = address.split(',');
   const city = words[words.length - 2];
   const country = words[words.length - 1];
+  const formattedMileage = mileage.toLocaleString('en-US');
 
   return (
     <Wrapper>
@@ -100,7 +100,9 @@ const ModalCard = ({ closeModal, carData }) => {
 
       <RentalBlockBottom>
         <li>{depositRequired}</li>
-        <li>Mileage:{mileage}</li>
+        <li>
+          Mileage:<ColorAge>{formattedMileage}</ColorAge>
+        </li>
         <li>Price: {rentalPrice}</li>
       </RentalBlockBottom>
       <a href="tel:+380730000000">

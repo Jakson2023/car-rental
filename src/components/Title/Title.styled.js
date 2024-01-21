@@ -1,12 +1,8 @@
 import styled from "styled-components";
-import image from '../../common/images/backroad.webp'
+
 import imageCar from '../../common/images/car.png'
 export const WrapperTitle = styled.div`
-height: 100vh;
-width: 100%;
-background-image: url(${image});
-background-position-y: center;
-    background-size: cover;
+
 
 
 `
@@ -21,7 +17,7 @@ height: 530px;
     top: 35%;
 `
 export const TitleText = styled.h1`
-text-shadow: 4px 4px 8px rgba(138, 43, 226, 0.8);
+text-shadow: 4px 4px 8px rgba(240, 128, 128, 0.8);
   color: #4B0082; 
   font-size: 95px;
   font-weight: 800;

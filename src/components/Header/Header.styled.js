@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { NavLink } from 'react-router-dom';
 export const WrapperHeader = styled.div`
 width: 100vw;
-height: 50px;
+height: 30px;
 padding: 20px 0;
 position: fixed;
 top: 0;
@@ -11,9 +11,9 @@ background-color: #00BFFF;
     border-bottom: 2px solid lightblue;
 display: flex;
 `
-export const BlockNav = styled.div`
+export const BlockNav = styled.ul`
 display: flex;
-   gap: 40px;
+   
     
 `
 export const Container = styled.div`
@@ -41,3 +41,9 @@ export const StyledLink = styled(NavLink)`
     
   
 `;
+
+export const StyledLi = styled.li`
+margin-right: 40px;
+    width: 110px;
+
+`
