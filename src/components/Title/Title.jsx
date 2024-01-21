@@ -1,18 +1,13 @@
-import React from 'react'
-import { TitleText, WrapperImage, WrapperTitle } from './Title.styled'
+import React from 'react';
+import { TitleText, WrapperImage } from './Title.styled';
 
- const Title = () => {
+const Title = () => {
   return (
-<div> new
-<WrapperTitle>
-  <WrapperImage>
-    <TitleText>Super Car Rental</TitleText>
-  </WrapperImage>
-</WrapperTitle>
-
-</div>
-    
-    
-  )
-}
- export default Title
+    <div>
+      <WrapperImage>
+        <TitleText>Super Car Rental</TitleText>
+      </WrapperImage>
+    </div>
+  );
+};
+export default Title;

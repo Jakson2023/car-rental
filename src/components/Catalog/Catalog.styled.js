@@ -7,7 +7,6 @@ export const WrapForm = styled.div`
   justify-content: center;
   gap: 18px;
   align-items: center;
-
 `;
 export const WrapSelect = styled.ul`
   display: flex;
@@ -68,15 +67,13 @@ export const TextInputMileage = styled.label`
   font-size: 14px;
   font-weight: 500;
   line-height: 1.29;
- 
 `;
 
 export const WrapInput = styled.div`
-display: flex;
-    flex-direction: column;
-    height: 74px;
-
-`
+  display: flex;
+  flex-direction: column;
+  height: 74px;
+`;
 
 export const InputLeft = styled.input`
   width: 43px;
@@ -120,7 +117,6 @@ export const ButtonSearch = styled.button`
 export const BlockCars = styled.div`
   width: 1184px;
   display: flex;
-  justify-content: space-between;
   flex-wrap: wrap;
   margin-left: auto;
   margin-right: auto;
@@ -129,38 +125,20 @@ export const BlockCars = styled.div`
   margin-top: 50px;
 `;
 
-
-
-
-
-
 export const Img = styled.img`
-height: 100%;
-    width: 100%;
-    object-fit: cover;
-
-`
-
-
-
-
-
-
-
-
-
-
-
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+`;
 
 export const ButtonLoadMOre = styled.button`
-color: #3470FF;
-font-size: 16px;
-font-weight: 500;
-line-height: 1.5; 
-text-decoration-line: underline;
-margin: 0 auto;
-margin-top: 100px;
-display: block;
-cursor: pointer;
-
-`
+  color: #3470ff;
+  font-size: 16px;
+  font-weight: 500;
+  line-height: 1.5;
+  text-decoration-line: underline;
+  margin: 0 auto;
+  margin-top: 100px;
+  display: block;
+  cursor: pointer;
+`;

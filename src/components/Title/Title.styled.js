@@ -1,18 +1,14 @@
 import styled from "styled-components";
 
 import imageCar from '../../common/images/car.png'
-export const WrapperTitle = styled.div`
 
-
-
-`
 export const WrapperImage = styled.div`
 background-image: url(${imageCar});
 height: 530px;
     background-size: contain;
     background-repeat: no-repeat;
     position: absolute;
-    left: 20%;
+    left: 25%;
     width: 80%;
     top: 35%;
 `
