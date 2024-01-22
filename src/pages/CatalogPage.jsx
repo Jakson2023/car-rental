@@ -1,11 +1,14 @@
-import React from 'react'
-import Catalog from '../components/Catalog/Catalog'
-
-
- const CatalogPage = () => {
+import React from 'react';
+import Catalog from '../components/Catalog/Catalog';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+const CatalogPage = () => {
   return (
-    <Catalog/>
-  )
-}
+    <div>
+      <Catalog />
+      <ToastContainer />
+    </div>
+  );
+};
 
-export default CatalogPage
+export default CatalogPage;

@@ -132,7 +132,9 @@ export const Img = styled.img`
 `;
 
 export const ButtonLoadMOre = styled.button`
+  height: 24px;
   color: #3470ff;
+  background-color: transparent;
   font-size: 16px;
   font-weight: 500;
   line-height: 1.5;
@@ -141,4 +143,21 @@ export const ButtonLoadMOre = styled.button`
   margin-top: 100px;
   display: block;
   cursor: pointer;
+`;
+
+export const ButtonBack = styled.button`
+  width: 200px;
+  height: auto;
+  color: #fff;
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 1.43;
+  padding: 14px 44px;
+  border-radius: 12px;
+  background: #3470ff;
+  cursor: pointer;
+  margin: 50px auto 0;
+`;
+export const WrapperContainer = styled.div`
+  padding-bottom: 150px;
 `;
