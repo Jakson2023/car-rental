@@ -23,7 +23,6 @@ export const fetchAllCars = createAsyncThunk(
     try {
       const urlNotPagination = `${baseUrl}`;
       const response = await axios.get(urlNotPagination);
-
       return response.data;
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
@@ -31,14 +30,3 @@ export const fetchAllCars = createAsyncThunk(
   }
 );
 
-export const favoriteCars = createAsyncThunk(
-  'advert/favoriteCars',
-  async (id, thunkAPI) => {
-    try {
-      const response = await axios.get(`/adverts/${id}`);
-      return response.data;
-    } catch (error) {
-      return thunkAPI.rejectWithValue(error.message);
-    }
-  }
-);

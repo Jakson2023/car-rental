@@ -14,6 +14,9 @@ const slice = createSlice({
     nextPage: state => {
       state.page += 1;
     },
+    resetPage: state => {
+      state.page = 1; 
+    },
     addToFavorites: (state, action) => {
       state.favorites = [...state.favorites, action.payload];
     },
@@ -44,5 +47,5 @@ const slice = createSlice({
       });
   },
 });
-export const { nextPage, addToFavorites, removeFromFavorites } = slice.actions;
+export const { nextPage, addToFavorites, removeFromFavorites,resetPage } = slice.actions;
 export default slice.reducer;

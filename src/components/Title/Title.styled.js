@@ -9,7 +9,6 @@ height: 530px;
     background-repeat: no-repeat;
     position: absolute;
     left: 25%;
-    width: 80%;
     top: 35%;
 `
 export const TitleText = styled.h1`

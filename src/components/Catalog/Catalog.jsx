@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { fetchAllCars, fetchCars } from '../../redux/operations';
-import { nextPage } from '../../redux/slice';
+import { nextPage,resetPage } from '../../redux/slice';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   BlockCars,
@@ -29,9 +29,12 @@ const Catalog = () => {
   const dispatch = useDispatch();
 
   const filteredCars = filterCars(selectedMake, adverts, alladverts);
-
+  
   useEffect(() => {
     dispatch(fetchCars());
+    
+      dispatch(resetPage());
+   
   }, [dispatch]);
 
   const handleFilter = e => {
@@ -43,6 +46,9 @@ const Catalog = () => {
     dispatch(nextPage());
     dispatch(fetchCars());
   };
+
+
+
 
   return (
     <div>
@@ -100,7 +106,7 @@ const Catalog = () => {
           })}
       </BlockCars>
 
-      {adverts.length !== 0 && (
+      {adverts.length > 1 && (
         <ButtonLoadMOre onClick={loadMoreClick}>Load more</ButtonLoadMOre>
       )}
     </div>
