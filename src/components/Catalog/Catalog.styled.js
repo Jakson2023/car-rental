@@ -112,6 +112,11 @@ export const ButtonSearch = styled.button`
   border-radius: 12px;
   background: #3470ff;
   cursor: pointer;
+  &:hover {
+    background: #0b44cd;
+    transition: background 500ms cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 `;
 
 export const BlockCars = styled.div`
@@ -143,6 +148,11 @@ export const ButtonLoadMOre = styled.button`
   margin-top: 100px;
   display: block;
   cursor: pointer;
+  &:hover {
+    color: #0b44cd;
+    transition: color 500ms cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 `;
 
 export const ButtonBack = styled.button`
@@ -157,6 +167,11 @@ export const ButtonBack = styled.button`
   background: #3470ff;
   cursor: pointer;
   margin: 50px auto 0;
+  &:hover {
+    background: #0b44cd;
+    transition: background 500ms cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 `;
 export const WrapperContainer = styled.div`
   padding-bottom: 150px;

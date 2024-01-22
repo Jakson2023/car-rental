@@ -51,7 +51,7 @@ const Catalog = () => {
     dispatch(fetchCars());
     window.scrollTo({
       top: 0,
-      behavior: 'smooth', 
+      behavior: 'smooth',
     });
   };
 

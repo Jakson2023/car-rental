@@ -6,7 +6,6 @@ import {
   ButtonLearnMore,
   Img,
   ImgContainer,
-  ModelText,
   RentalPriceText,
   SeparatorLine,
   CarCard,
@@ -89,7 +88,7 @@ const SingleCard = ({ item, style }) => {
 
         <BlockName>
           <li>
-            {make} <ModelText style={style}>{model}</ModelText>, {year}
+            {make} <span style={style}>{model}</span>, {year}
           </li>
           <RentalPriceText>{rentalPrice}</RentalPriceText>
         </BlockName>

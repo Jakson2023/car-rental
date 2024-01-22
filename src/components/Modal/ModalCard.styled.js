@@ -92,6 +92,11 @@ export const ButtonClose = styled.button`
   background-image: url(${close});
   margin-top: 16px;
   margin-left: 100%;
+  
+  &:hover {
+    transform: rotate(180deg);
+    transition: transform 500ms cubic-bezier(0.4, 0, 0.2, 1), visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 `;
 export const ImgContainerModal = styled.div`
   width: 100%;
@@ -139,6 +144,7 @@ export const RentalBlockBottom = styled.ul`
   gap: 36px;
   padding: 7px 14px;
   align-items: center;
+ 
 `;
 export const ButtonRental = styled.button`
   display: inline-flex;
@@ -153,6 +159,10 @@ export const ButtonRental = styled.button`
   font-size: 14px;
   font-weight: 600;
   line-height: 1.43;
+  &:hover {
+    background: #0B44CD;
+    transition: background 500ms cubic-bezier(0.4, 0, 0.2, 1), visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 `;
 export const ColorAge = styled.span`
   color: #3470ff;

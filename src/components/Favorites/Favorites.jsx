@@ -63,9 +63,8 @@ const Favorites = () => {
           </li>
         </WrapSelect>
         <WrapInput>
-        <TextInputMileage>Car mileage / km</TextInputMileage>
+          <TextInputMileage>Car mileage / km</TextInputMileage>
           <div>
-            
             <InputLeft type="text" placeholder="From" />
             <InputRight type="text" placeholder="To" />
           </div>

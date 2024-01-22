@@ -43,6 +43,11 @@ export const ButtonLearnMore = styled.button`
   border-radius: 12px;
   background: #3470ff;
   cursor: pointer;
+  &:hover {
+    background: #0b44cd;
+    transition: background 500ms cubic-bezier(0.4, 0, 0.2, 1),
+      visibility 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  }
 `;
 export const Img = styled.img`
   height: 100%;
@@ -61,11 +66,10 @@ export const ImgContainer = styled.div`
       180deg,
       rgba(18, 20, 23, 0.5) 2.5%,
       rgba(18, 20, 23, 0) 41.07%
-    ), lightgray 50% / cover no-repeat;
+    ),
+    lightgray 50% / cover no-repeat;
 `;
-export const ModelText = styled.span`
-  /* color: #3470ff; */
-`;
+
 export const RentalPriceText = styled.li`
   margin-left: auto;
 `;

@@ -1,5 +1,4 @@
 import styled from "styled-components";
-
 import imageCar from '../../common/images/car.png'
 
 export const WrapperImage = styled.div`
